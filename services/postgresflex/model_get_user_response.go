@@ -17,29 +17,15 @@ import (
 // checks if the GetUserResponse type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetUserResponse{}
 
-/*
-	types and functions for item
-*/
-
-// isModel
-type GetUserResponseGetItemAttributeType = *UserResponse
-type GetUserResponseGetItemArgType = UserResponse
-type GetUserResponseGetItemRetType = UserResponse
-
-func getGetUserResponseGetItemAttributeTypeOk(arg GetUserResponseGetItemAttributeType) (ret GetUserResponseGetItemRetType, ok bool) {
-	if arg == nil {
-		return ret, false
-	}
-	return *arg, true
-}
-
-func setGetUserResponseGetItemAttributeType(arg *GetUserResponseGetItemAttributeType, val GetUserResponseGetItemRetType) {
-	*arg = &val
-}
-
 // GetUserResponse struct for GetUserResponse
 type GetUserResponse struct {
-	Item GetUserResponseGetItemAttributeType `json:"item,omitempty"`
+	ConnectionString *string  `json:"connectionString,omitempty"`
+	Host             *string  `json:"host,omitempty"`
+	Id               *int64   `json:"id,omitempty"`
+	Name             *string  `json:"name,omitempty"`
+	Port             *int64   `json:"port,omitempty"`
+	Roles            []string `json:"roles,omitempty"`
+	Status           *string  `json:"status,omitempty"`
 }
 
 // NewGetUserResponse instantiates a new GetUserResponse object
@@ -59,33 +45,189 @@ func NewGetUserResponseWithDefaults() *GetUserResponse {
 	return &this
 }
 
-// GetItem returns the Item field value if set, zero value otherwise.
-func (o *GetUserResponse) GetItem() (res GetUserResponseGetItemRetType) {
-	res, _ = o.GetItemOk()
-	return
+// GetConnectionString returns the ConnectionString field value if set, zero value otherwise.
+func (o *GetUserResponse) GetConnectionString() string {
+	if o == nil || o.ConnectionString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionString
 }
 
-// GetItemOk returns a tuple with the Item field value if set, nil otherwise
+// GetConnectionStringOk returns a tuple with the ConnectionString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetUserResponse) GetItemOk() (ret GetUserResponseGetItemRetType, ok bool) {
-	return getGetUserResponseGetItemAttributeTypeOk(o.Item)
+func (o *GetUserResponse) GetConnectionStringOk() (*string, bool) {
+	if o == nil || o.ConnectionString == nil {
+		return nil, false
+	}
+	return o.ConnectionString, true
 }
 
-// HasItem returns a boolean if a field has been set.
-func (o *GetUserResponse) HasItem() bool {
-	_, ok := o.GetItemOk()
-	return ok
+// SetConnectionString gets a reference to the given string and assigns it to the ConnectionString field.
+func (o *GetUserResponse) SetConnectionString(v string) {
+	o.ConnectionString = &v
 }
 
-// SetItem gets a reference to the given UserResponse and assigns it to the Item field.
-func (o *GetUserResponse) SetItem(v GetUserResponseGetItemRetType) {
-	setGetUserResponseGetItemAttributeType(&o.Item, v)
+// GetHost returns the Host field value if set, zero value otherwise.
+func (o *GetUserResponse) GetHost() string {
+	if o == nil || o.Host == nil {
+		var ret string
+		return ret
+	}
+	return *o.Host
+}
+
+// GetHostOk returns a tuple with the Host field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetUserResponse) GetHostOk() (*string, bool) {
+	if o == nil || o.Host == nil {
+		return nil, false
+	}
+	return o.Host, true
+}
+
+// SetHost gets a reference to the given string and assigns it to the Host field.
+func (o *GetUserResponse) SetHost(v string) {
+	o.Host = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *GetUserResponse) GetId() int64 {
+	if o == nil || o.Id == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetUserResponse) GetIdOk() (*int64, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *GetUserResponse) SetId(v int64) {
+	o.Id = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *GetUserResponse) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetUserResponse) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *GetUserResponse) SetName(v string) {
+	o.Name = &v
+}
+
+// GetPort returns the Port field value if set, zero value otherwise.
+func (o *GetUserResponse) GetPort() int64 {
+	if o == nil || o.Port == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Port
+}
+
+// GetPortOk returns a tuple with the Port field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetUserResponse) GetPortOk() (*int64, bool) {
+	if o == nil || o.Port == nil {
+		return nil, false
+	}
+	return o.Port, true
+}
+
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *GetUserResponse) SetPort(v int64) {
+	o.Port = &v
+}
+
+// GetRoles returns the Roles field value if set, zero value otherwise.
+func (o *GetUserResponse) GetRoles() []string {
+	if o == nil || o.Roles == nil {
+		var ret []string
+		return ret
+	}
+	return o.Roles
+}
+
+// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetUserResponse) GetRolesOk() ([]string, bool) {
+	if o == nil || o.Roles == nil {
+		return nil, false
+	}
+	return o.Roles, true
+}
+
+// SetRoles gets a reference to the given []string and assigns it to the Roles field.
+func (o *GetUserResponse) SetRoles(v []string) {
+	o.Roles = v
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *GetUserResponse) GetStatus() string {
+	if o == nil || o.Status == nil {
+		var ret string
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetUserResponse) GetStatusOk() (*string, bool) {
+	if o == nil || o.Status == nil {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *GetUserResponse) SetStatus(v string) {
+	o.Status = &v
 }
 
 func (o GetUserResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if val, ok := getGetUserResponseGetItemAttributeTypeOk(o.Item); ok {
-		toSerialize["Item"] = val
+	if o.ConnectionString != nil {
+		toSerialize["connectionString"] = o.ConnectionString
+	}
+	if o.Host != nil {
+		toSerialize["host"] = o.Host
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
+	if o.Port != nil {
+		toSerialize["port"] = o.Port
+	}
+	if o.Roles != nil {
+		toSerialize["roles"] = o.Roles
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
 	}
 	return toSerialize, nil
 }

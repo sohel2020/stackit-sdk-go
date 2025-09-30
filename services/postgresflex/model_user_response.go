@@ -120,13 +120,57 @@ func setUserResponseGetUsernameAttributeType(arg *UserResponseGetUsernameAttribu
 type UserResponseGetUsernameArgType = string
 type UserResponseGetUsernameRetType = string
 
+/*
+	types and functions for connectionString
+*/
+
+// isNotNullableString
+type UserResponseGetConnectionStringAttributeType = *string
+
+func getUserResponseGetConnectionStringAttributeTypeOk(arg UserResponseGetConnectionStringAttributeType) (ret UserResponseGetConnectionStringRetType, ok bool) {
+	if arg == nil {
+		return ret, false
+	}
+	return *arg, true
+}
+
+func setUserResponseGetConnectionStringAttributeType(arg *UserResponseGetConnectionStringAttributeType, val UserResponseGetConnectionStringRetType) {
+	*arg = &val
+}
+
+type UserResponseGetConnectionStringArgType = string
+type UserResponseGetConnectionStringRetType = string
+
+/*
+	types and functions for status
+*/
+
+// isNotNullableString
+type UserResponseGetStatusAttributeType = *string
+
+func getUserResponseGetStatusAttributeTypeOk(arg UserResponseGetStatusAttributeType) (ret UserResponseGetStatusRetType, ok bool) {
+	if arg == nil {
+		return ret, false
+	}
+	return *arg, true
+}
+
+func setUserResponseGetStatusAttributeType(arg *UserResponseGetStatusAttributeType, val UserResponseGetStatusRetType) {
+	*arg = &val
+}
+
+type UserResponseGetStatusArgType = string
+type UserResponseGetStatusRetType = string
+
 // UserResponse struct for UserResponse
 type UserResponse struct {
-	Host     UserResponseGetHostAttributeType     `json:"host,omitempty"`
-	Id       UserResponseGetIdAttributeType       `json:"id,omitempty"`
-	Port     UserResponseGetPortAttributeType     `json:"port,omitempty"`
-	Roles    UserResponseGetRolesAttributeType    `json:"roles,omitempty"`
-	Username UserResponseGetUsernameAttributeType `json:"username,omitempty"`
+	ConnectionString UserResponseGetConnectionStringAttributeType `json:"connectionString,omitempty"`
+	Host             UserResponseGetHostAttributeType             `json:"host,omitempty"`
+	Id               UserResponseGetIdAttributeType               `json:"id,omitempty"`
+	Port             UserResponseGetPortAttributeType             `json:"port,omitempty"`
+	Roles            UserResponseGetRolesAttributeType            `json:"roles,omitempty"`
+	Status           UserResponseGetStatusAttributeType           `json:"status,omitempty"`
+	Username         UserResponseGetUsernameAttributeType         `json:"name,omitempty"`
 }
 
 // NewUserResponse instantiates a new UserResponse object
@@ -261,8 +305,57 @@ func (o *UserResponse) SetUsername(v UserResponseGetUsernameRetType) {
 	setUserResponseGetUsernameAttributeType(&o.Username, v)
 }
 
+// GetConnectionString returns the ConnectionString field value if set, zero value otherwise.
+func (o *UserResponse) GetConnectionString() (res UserResponseGetConnectionStringRetType) {
+	res, _ = o.GetConnectionStringOk()
+	return
+}
+
+// GetConnectionStringOk returns a tuple with the ConnectionString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UserResponse) GetConnectionStringOk() (ret UserResponseGetConnectionStringRetType, ok bool) {
+	return getUserResponseGetConnectionStringAttributeTypeOk(o.ConnectionString)
+}
+
+// HasConnectionString returns a boolean if a field has been set.
+func (o *UserResponse) HasConnectionString() bool {
+	_, ok := o.GetConnectionStringOk()
+	return ok
+}
+
+// SetConnectionString gets a reference to the given string and assigns it to the ConnectionString field.
+func (o *UserResponse) SetConnectionString(v UserResponseGetConnectionStringRetType) {
+	setUserResponseGetConnectionStringAttributeType(&o.ConnectionString, v)
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *UserResponse) GetStatus() (res UserResponseGetStatusRetType) {
+	res, _ = o.GetStatusOk()
+	return
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UserResponse) GetStatusOk() (ret UserResponseGetStatusRetType, ok bool) {
+	return getUserResponseGetStatusAttributeTypeOk(o.Status)
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *UserResponse) HasStatus() bool {
+	_, ok := o.GetStatusOk()
+	return ok
+}
+
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *UserResponse) SetStatus(v UserResponseGetStatusRetType) {
+	setUserResponseGetStatusAttributeType(&o.Status, v)
+}
+
 func (o UserResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if val, ok := getUserResponseGetConnectionStringAttributeTypeOk(o.ConnectionString); ok {
+		toSerialize["ConnectionString"] = val
+	}
 	if val, ok := getUserResponseGetHostAttributeTypeOk(o.Host); ok {
 		toSerialize["Host"] = val
 	}
@@ -274,6 +367,9 @@ func (o UserResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if val, ok := getUserResponseGetRolesAttributeTypeOk(o.Roles); ok {
 		toSerialize["Roles"] = val
+	}
+	if val, ok := getUserResponseGetStatusAttributeTypeOk(o.Status); ok {
+		toSerialize["Status"] = val
 	}
 	if val, ok := getUserResponseGetUsernameAttributeTypeOk(o.Username); ok {
 		toSerialize["Username"] = val
