@@ -19,13 +19,13 @@ var _ MappedNullable = &GetUserResponse{}
 
 // GetUserResponse struct for GetUserResponse
 type GetUserResponse struct {
-	ConnectionString *string  `json:"connectionString,omitempty"`
-	Host             *string  `json:"host,omitempty"`
-	Id               *int64   `json:"id,omitempty"`
-	Name             *string  `json:"name,omitempty"`
-	Port             *int64   `json:"port,omitempty"`
-	Roles            []string `json:"roles,omitempty"`
-	Status           *string  `json:"status,omitempty"`
+	ConnectionString UserResponseGetConnectionStringAttributeType `json:"connectionString,omitempty"`
+	Host             UserResponseGetHostAttributeType             `json:"host,omitempty"`
+	Id               UserResponseGetIdAttributeType               `json:"id,omitempty"`
+	Port             UserResponseGetPortAttributeType             `json:"port,omitempty"`
+	Roles            UserResponseGetRolesAttributeType            `json:"roles,omitempty"`
+	Status           UserResponseGetStatusAttributeType           `json:"status,omitempty"`
+	Username         UserResponseGetUsernameAttributeType         `json:"name,omitempty"`
 }
 
 // NewGetUserResponse instantiates a new GetUserResponse object
