@@ -12,6 +12,9 @@ package postgresflex
 
 import (
 	"encoding/json"
+	"net/url"
+	"strconv"
+	"strings"
 )
 
 // checks if the CreateUserResponse type satisfies the MappedNullable interface at compile time
@@ -124,4 +127,95 @@ func (v NullableCreateUserResponse) MarshalJSON() ([]byte, error) {
 func (v *NullableCreateUserResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
+}
+
+// UnmarshalJSON custom unmarshaling to handle both old and new API response formats
+func (o *CreateUserResponse) UnmarshalJSON(src []byte) error {
+	// First, try to unmarshal as the new format (direct fields at root level)
+	var newFormat struct {
+		ConnectionString string `json:"connectionString"`
+		ID               int    `json:"id"`
+		Name             string `json:"name"`
+		Password         string `json:"password"`
+		Status           string `json:"status"`
+	}
+
+	if err := json.Unmarshal(src, &newFormat); err == nil && newFormat.ConnectionString != "" {
+		// This is the new format, transform it to the old format
+		user := o.transformNewFormatToOld(newFormat)
+		o.Item = &user
+		return nil
+	}
+
+	// If that fails, try the old format (with item wrapper)
+	var oldFormat struct {
+		Item *User `json:"item"`
+	}
+
+	if err := json.Unmarshal(src, &oldFormat); err == nil && oldFormat.Item != nil {
+		o.Item = oldFormat.Item
+		return nil
+	}
+
+	// If both fail, return the original error
+	return json.Unmarshal(src, o)
+}
+
+// transformNewFormatToOld converts the new API response format to the old User struct
+func (o *CreateUserResponse) transformNewFormatToOld(newFormat struct {
+	ConnectionString string `json:"connectionString"`
+	ID               int    `json:"id"`
+	Name             string `json:"name"`
+	Password         string `json:"password"`
+	Status           string `json:"status"`
+}) User {
+	user := User{}
+
+	// Set basic fields
+	user.SetId(strconv.Itoa(newFormat.ID))
+	user.SetUsername(newFormat.Name)
+	user.SetPassword(newFormat.Password)
+	user.SetUri(newFormat.ConnectionString)
+
+	// Parse connection string to extract host, port, and database
+	if newFormat.ConnectionString != "" {
+		host, port, database := parseConnectionString(newFormat.ConnectionString)
+		if host != "" {
+			user.SetHost(host)
+		}
+		if port != 0 {
+			user.SetPort(int64(port))
+		}
+		if database != "" {
+			user.SetDatabase(database)
+		}
+	}
+
+	// Set default roles (these might need to be adjusted based on your requirements)
+	user.SetRoles([]string{"createdb", "login"})
+
+	return user
+}
+
+// parseConnectionString extracts host, port, and database from a PostgreSQL connection string
+func parseConnectionString(connStr string) (host string, port int, database string) {
+	// Parse the connection string
+	u, err := url.Parse(connStr)
+	if err != nil {
+		return "", 0, ""
+	}
+
+	host = u.Hostname()
+	if u.Port() != "" {
+		if p, err := strconv.Atoi(u.Port()); err == nil {
+			port = p
+		}
+	}
+
+	// Extract database from path (remove leading slash)
+	if u.Path != "" {
+		database = strings.TrimPrefix(u.Path, "/")
+	}
+
+	return host, port, database
 }
