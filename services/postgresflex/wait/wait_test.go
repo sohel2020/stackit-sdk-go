@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/sohel2020/stackit-sdkgo/services/postgresflex"
+	"github.com/sohel2020/stackit-sdk-go/services/postgresflex"
 	"github.com/stackitcloud/stackit-sdk-go/core/oapierror"
 	"github.com/stackitcloud/stackit-sdk-go/core/utils"
 )
