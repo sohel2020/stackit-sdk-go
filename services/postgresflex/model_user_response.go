@@ -43,7 +43,7 @@ type UserResponseGetHostRetType = string
 */
 
 // isNotNullableString
-type UserResponseGetIdAttributeType = *string
+type UserResponseGetIdAttributeType = *int
 
 func getUserResponseGetIdAttributeTypeOk(arg UserResponseGetIdAttributeType) (ret UserResponseGetIdRetType, ok bool) {
 	if arg == nil {
