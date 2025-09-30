@@ -61,7 +61,7 @@ type CreateUserPayloadGetUsernameRetType = string
 // CreateUserPayload struct for CreateUserPayload
 type CreateUserPayload struct {
 	Roles    CreateUserPayloadGetRolesAttributeType    `json:"roles,omitempty"`
-	Username CreateUserPayloadGetUsernameAttributeType `json:"username,omitempty"`
+	Username CreateUserPayloadGetUsernameAttributeType `json:"name,omitempty"`
 }
 
 // NewCreateUserPayload instantiates a new CreateUserPayload object
