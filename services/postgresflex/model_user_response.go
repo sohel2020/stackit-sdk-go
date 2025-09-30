@@ -57,7 +57,7 @@ func setUserResponseGetIdAttributeType(arg *UserResponseGetIdAttributeType, val 
 }
 
 type UserResponseGetIdArgType = string
-type UserResponseGetIdRetType = string
+type UserResponseGetIdRetType = int
 
 /*
 	types and functions for port
