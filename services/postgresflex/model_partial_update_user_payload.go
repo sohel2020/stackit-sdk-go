@@ -22,21 +22,21 @@ var _ MappedNullable = &PartialUpdateUserPayload{}
 */
 
 // isNotNullableString
-type PartialUpdateUserPayloadGetDatabaseAttributeType = *string
+type PartialUpdateUserPayloadGetUserAttributeType = *string
 
-func getPartialUpdateUserPayloadGetDatabaseAttributeTypeOk(arg PartialUpdateUserPayloadGetDatabaseAttributeType) (ret PartialUpdateUserPayloadGetDatabaseRetType, ok bool) {
+func getPartialUpdateUserPayloadGetUserAttributeTypeOk(arg PartialUpdateUserPayloadGetUserAttributeType) (ret PartialUpdateUserPayloadGetUserRetType, ok bool) {
 	if arg == nil {
 		return ret, false
 	}
 	return *arg, true
 }
 
-func setPartialUpdateUserPayloadGetDatabaseAttributeType(arg *PartialUpdateUserPayloadGetDatabaseAttributeType, val PartialUpdateUserPayloadGetDatabaseRetType) {
+func setPartialUpdateUserPayloadGetUserAttributeType(arg *PartialUpdateUserPayloadGetUserAttributeType, val PartialUpdateUserPayloadGetUserRetType) {
 	*arg = &val
 }
 
-type PartialUpdateUserPayloadGetDatabaseArgType = string
-type PartialUpdateUserPayloadGetDatabaseRetType = string
+type PartialUpdateUserPayloadGetUserArgType = string
+type PartialUpdateUserPayloadGetUserRetType = string
 
 /*
 	types and functions for roles
@@ -60,8 +60,8 @@ func setPartialUpdateUserPayloadGetRolesAttributeType(arg *PartialUpdateUserPayl
 
 // PartialUpdateUserPayload struct for PartialUpdateUserPayload
 type PartialUpdateUserPayload struct {
-	Database PartialUpdateUserPayloadGetDatabaseAttributeType `json:"database,omitempty"`
-	Roles    PartialUpdateUserPayloadGetRolesAttributeType    `json:"roles,omitempty"`
+	User  PartialUpdateUserPayloadGetUserAttributeType  `json:"name,omitempty"`
+	Roles PartialUpdateUserPayloadGetRolesAttributeType `json:"roles,omitempty"`
 }
 
 // NewPartialUpdateUserPayload instantiates a new PartialUpdateUserPayload object
@@ -82,26 +82,26 @@ func NewPartialUpdateUserPayloadWithDefaults() *PartialUpdateUserPayload {
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *PartialUpdateUserPayload) GetDatabase() (res PartialUpdateUserPayloadGetDatabaseRetType) {
-	res, _ = o.GetDatabaseOk()
+func (o *PartialUpdateUserPayload) GetUser() (res PartialUpdateUserPayloadGetUserRetType) {
+	res, _ = o.GetUserOk()
 	return
 }
 
-// GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
+// GetUserOk returns a tuple with the Database field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PartialUpdateUserPayload) GetDatabaseOk() (ret PartialUpdateUserPayloadGetDatabaseRetType, ok bool) {
-	return getPartialUpdateUserPayloadGetDatabaseAttributeTypeOk(o.Database)
+func (o *PartialUpdateUserPayload) GetUserOk() (ret PartialUpdateUserPayloadGetUserRetType, ok bool) {
+	return getPartialUpdateUserPayloadGetUserAttributeTypeOk(o.User)
 }
 
 // HasDatabase returns a boolean if a field has been set.
 func (o *PartialUpdateUserPayload) HasDatabase() bool {
-	_, ok := o.GetDatabaseOk()
+	_, ok := o.GetUserOk()
 	return ok
 }
 
 // SetDatabase gets a reference to the given string and assigns it to the Database field.
-func (o *PartialUpdateUserPayload) SetDatabase(v PartialUpdateUserPayloadGetDatabaseRetType) {
-	setPartialUpdateUserPayloadGetDatabaseAttributeType(&o.Database, v)
+func (o *PartialUpdateUserPayload) SetDatabase(v PartialUpdateUserPayloadGetUserRetType) {
+	setPartialUpdateUserPayloadGetUserAttributeType(&o.User, v)
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
@@ -129,8 +129,8 @@ func (o *PartialUpdateUserPayload) SetRoles(v PartialUpdateUserPayloadGetRolesRe
 
 func (o PartialUpdateUserPayload) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if val, ok := getPartialUpdateUserPayloadGetDatabaseAttributeTypeOk(o.Database); ok {
-		toSerialize["Database"] = val
+	if val, ok := getPartialUpdateUserPayloadGetUserAttributeTypeOk(o.User); ok {
+		toSerialize["User"] = val
 	}
 	if val, ok := getPartialUpdateUserPayloadGetRolesAttributeTypeOk(o.Roles); ok {
 		toSerialize["Roles"] = val
