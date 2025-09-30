@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/examples/waiter
+module github.com/sohel2020/stackit-sdk-go/examples/waiter
 
 go 1.21
 

@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/archiving
+module github.com/sohel2020/stackit-sdk-go/services/archiving
 
 go 1.21
 

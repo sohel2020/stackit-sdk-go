@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/sohel2020/stackit-sdkgo/services/postgresflex"
 	"github.com/stackitcloud/stackit-sdk-go/core/runtime"
-	"github.com/stackitcloud/stackit-sdk-go/services/postgresflex"
 )
 
 func main() {

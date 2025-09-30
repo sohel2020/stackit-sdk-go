@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/auditlog
+module github.com/sohel2020/stackit-sdk-go/services/auditlog
 
 go 1.21
 

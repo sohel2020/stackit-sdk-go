@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/examples/authentication
+module github.com/sohel2020/stackit-sdk-go/examples/authentication
 
 go 1.21
 

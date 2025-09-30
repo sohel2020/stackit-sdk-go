@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/examples/objectstorage
+module github.com/sohel2020/stackit-sdk-go/examples/objectstorage
 
 go 1.21
 

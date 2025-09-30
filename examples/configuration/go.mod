@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/examples/configuration
+module github.com/sohel2020/stackit-sdk-go/examples/configuration
 
 go 1.21
 

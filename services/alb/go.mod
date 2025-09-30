@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/alb
+module github.com/sohel2020/stackit-sdk-go/services/alb
 
 go 1.21
 

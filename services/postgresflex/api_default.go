@@ -729,7 +729,7 @@ func (r CloneInstanceRequest) Execute() (*CloneInstanceResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/clone"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/clone"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -895,7 +895,7 @@ func (r CreateDatabaseRequest) Execute() (*InstanceCreateDatabaseResponse, error
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/databases"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/databases"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -1061,7 +1061,7 @@ func (r CreateInstanceRequest) Execute() (*CreateInstanceResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 
@@ -1223,7 +1223,7 @@ func (r CreateUserRequest) Execute() (*CreateUserResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/users"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/users"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -1381,7 +1381,7 @@ func (r DeleteDatabaseRequest) Execute() error {
 		return &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/databases/{databaseId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/databases/{databaseId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -1527,7 +1527,7 @@ func (r DeleteInstanceRequest) Execute() error {
 		return &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -1691,7 +1691,7 @@ func (r DeleteUserRequest) Execute() error {
 		return &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -1837,7 +1837,7 @@ func (r ForceDeleteInstanceRequest) Execute() error {
 		return &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/force"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/force"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -2002,7 +2002,7 @@ func (r GetBackupRequest) Execute() (*GetBackupResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/backups/{backupId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/backups/{backupId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -2159,7 +2159,7 @@ func (r GetInstanceRequest) Execute() (*InstanceResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -2313,7 +2313,7 @@ func (r GetUserRequest) Execute() (*GetUserResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -2470,7 +2470,7 @@ func (r ListBackupsRequest) Execute() (*ListBackupsResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/backups"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/backups"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -2623,7 +2623,7 @@ func (r ListDatabaseParametersRequest) Execute() (*PostgresDatabaseParameterResp
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/parameter"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/parameter"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -2776,7 +2776,7 @@ func (r ListDatabasesRequest) Execute() (*InstanceListDatabasesResponse, error) 
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/databases"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/databases"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -2928,7 +2928,7 @@ func (r ListFlavorsRequest) Execute() (*ListFlavorsResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/flavors"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/flavors"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 
@@ -3076,7 +3076,7 @@ func (r ListInstancesRequest) Execute() (*ListInstancesResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 
@@ -3258,7 +3258,7 @@ func (r ListMetricsRequest) Execute() (*InstanceMetricsResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/metrics/{metric}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/metrics/{metric}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -3449,7 +3449,7 @@ func (r ListStoragesRequest) Execute() (*ListStoragesResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/storages/{flavorId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/storages/{flavorId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"flavorId"+"}", url.PathEscape(ParameterValueToString(r.flavorId, "flavorId")), -1)
@@ -3602,7 +3602,7 @@ func (r ListUsersRequest) Execute() (*ListUsersResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/users"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/users"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -3762,7 +3762,7 @@ func (r ListVersionsRequest) Execute() (*ListVersionsResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/versions"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 
@@ -3922,7 +3922,7 @@ func (r PartialUpdateInstanceRequest) Execute() (*PartialUpdateInstanceResponse,
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -4088,7 +4088,7 @@ func (r PartialUpdateUserRequest) Execute() error {
 		return &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -4248,7 +4248,7 @@ func (r ResetUserRequest) Execute() (*ResetUserResponse, error) {
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}/reset"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}/reset"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -4433,7 +4433,7 @@ func (r UpdateBackupScheduleRequest) Execute() error {
 		return &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/backups"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/backups"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -4589,7 +4589,7 @@ func (r UpdateInstanceRequest) Execute() (*PartialUpdateInstanceResponse, error)
 		return localVarReturnValue, &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)
@@ -4755,7 +4755,7 @@ func (r UpdateUserRequest) Execute() error {
 		return &oapierror.GenericOpenAPIError{ErrorMessage: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v2/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
+	localVarPath := localBasePath + "/v3alpha1/projects/{projectId}/regions/{region}/instances/{instanceId}/users/{userId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(ParameterValueToString(r.projectId, "projectId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"region"+"}", url.PathEscape(ParameterValueToString(r.region, "region")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(ParameterValueToString(r.instanceId, "instanceId")), -1)

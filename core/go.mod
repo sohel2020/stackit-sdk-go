@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/core
+module github.com/sohel2020/stackit-sdk-go/core
 
 go 1.21
 

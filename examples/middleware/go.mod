@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/examples/middleware
+module github.com/sohel2020/stackit-sdk-go/examples/middleware
 
 go 1.21
 

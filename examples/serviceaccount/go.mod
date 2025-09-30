@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/examples/serviceaccount
+module github.com/sohel2020/stackit-sdk-go/examples/serviceaccount
 
 go 1.21
 

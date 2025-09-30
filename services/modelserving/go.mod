@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/modelserving
+module github.com/sohel2020/stackit-sdk-go/services/modelserving
 
 go 1.21
 

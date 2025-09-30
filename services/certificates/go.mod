@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/certificates
+module github.com/sohel2020/stackit-sdk-go/services/certificates
 
 go 1.21
 

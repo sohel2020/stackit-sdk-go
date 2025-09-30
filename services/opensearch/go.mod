@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/opensearch
+module github.com/sohel2020/stackit-sdk-go/services/opensearch
 
 go 1.21
 

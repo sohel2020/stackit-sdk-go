@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/serverupdate
+module github.com/sohel2020/stackit-sdk-go/services/serverupdate
 
 go 1.21
 

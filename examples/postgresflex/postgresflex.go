@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/stackitcloud/stackit-sdk-go/services/postgresflex"
-	"github.com/stackitcloud/stackit-sdk-go/services/postgresflex/wait"
+	"github.com/sohel2020/stackit-sdkgo/services/postgresflex"
+	"github.com/sohel2020/stackit-sdkgo/services/postgresflex/wait"
 )
 
 func main() {

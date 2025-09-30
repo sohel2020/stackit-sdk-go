@@ -1,4 +1,4 @@
-module github.com/stackitcloud/stackit-sdk-go/services/sqlserverflex
+module github.com/sohel2020/stackit-sdk-go/services/sqlserverflex
 
 go 1.21
 
