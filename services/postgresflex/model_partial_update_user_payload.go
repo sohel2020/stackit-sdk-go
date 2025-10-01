@@ -18,7 +18,7 @@ import (
 var _ MappedNullable = &PartialUpdateUserPayload{}
 
 /*
-	types and functions for database
+	types and functions for username
 */
 
 // isNotNullableString
@@ -81,26 +81,26 @@ func NewPartialUpdateUserPayloadWithDefaults() *PartialUpdateUserPayload {
 	return &this
 }
 
-// GetDatabase returns the Database field value if set, zero value otherwise.
+// GetUsername returns the Username field value if set, zero value otherwise.
 func (o *PartialUpdateUserPayload) GetUser() (res PartialUpdateUserPayloadGetUserRetType) {
 	res, _ = o.GetUserOk()
 	return
 }
 
-// GetUserOk returns a tuple with the Database field value if set, nil otherwise
+// GetUserOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartialUpdateUserPayload) GetUserOk() (ret PartialUpdateUserPayloadGetUserRetType, ok bool) {
 	return getPartialUpdateUserPayloadGetUserAttributeTypeOk(o.User)
 }
 
 // HasDatabase returns a boolean if a field has been set.
-func (o *PartialUpdateUserPayload) HasDatabase() bool {
+func (o *PartialUpdateUserPayload) HasUsername() bool {
 	_, ok := o.GetUserOk()
 	return ok
 }
 
-// SetDatabase gets a reference to the given string and assigns it to the Database field.
-func (o *PartialUpdateUserPayload) SetDatabase(v PartialUpdateUserPayloadGetUserRetType) {
+// SetUsername gets a reference to the given string and assigns it to the Username field.
+func (o *PartialUpdateUserPayload) SetUsername(v PartialUpdateUserPayloadGetUserRetType) {
 	setPartialUpdateUserPayloadGetUserAttributeType(&o.User, v)
 }
 

@@ -22,21 +22,21 @@ var _ MappedNullable = &UpdateUserPayload{}
 */
 
 // isNotNullableString
-type UpdateUserPayloadGetDatabaseAttributeType = *string
+type UpdateUserPayloadGetUsernameAttributeType = *string
 
-func getUpdateUserPayloadGetDatabaseAttributeTypeOk(arg UpdateUserPayloadGetDatabaseAttributeType) (ret UpdateUserPayloadGetDatabaseRetType, ok bool) {
+func getUpdateUserPayloadGetUsernameAttributeTypeOk(arg UpdateUserPayloadGetUsernameAttributeType) (ret UpdateUserPayloadGetUsernameRetType, ok bool) {
 	if arg == nil {
 		return ret, false
 	}
 	return *arg, true
 }
 
-func setUpdateUserPayloadGetDatabaseAttributeType(arg *UpdateUserPayloadGetDatabaseAttributeType, val UpdateUserPayloadGetDatabaseRetType) {
+func setUpdateUserPayloadGetUsernameAttributeType(arg *UpdateUserPayloadGetUsernameAttributeType, val UpdateUserPayloadGetUsernameRetType) {
 	*arg = &val
 }
 
 type UpdateUserPayloadGetDatabaseArgType = string
-type UpdateUserPayloadGetDatabaseRetType = string
+type UpdateUserPayloadGetUsernameRetType = string
 
 /*
 	types and functions for roles
@@ -60,7 +60,7 @@ func setUpdateUserPayloadGetRolesAttributeType(arg *UpdateUserPayloadGetRolesAtt
 
 // UpdateUserPayload struct for UpdateUserPayload
 type UpdateUserPayload struct {
-	Database UpdateUserPayloadGetDatabaseAttributeType `json:"database,omitempty"`
+	Username UpdateUserPayloadGetUsernameAttributeType `json:"name,omitempty"`
 	Roles    UpdateUserPayloadGetRolesAttributeType    `json:"roles,omitempty"`
 }
 
@@ -82,15 +82,15 @@ func NewUpdateUserPayloadWithDefaults() *UpdateUserPayload {
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *UpdateUserPayload) GetDatabase() (res UpdateUserPayloadGetDatabaseRetType) {
+func (o *UpdateUserPayload) GetDatabase() (res UpdateUserPayloadGetUsernameRetType) {
 	res, _ = o.GetDatabaseOk()
 	return
 }
 
 // GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateUserPayload) GetDatabaseOk() (ret UpdateUserPayloadGetDatabaseRetType, ok bool) {
-	return getUpdateUserPayloadGetDatabaseAttributeTypeOk(o.Database)
+func (o *UpdateUserPayload) GetDatabaseOk() (ret UpdateUserPayloadGetUsernameRetType, ok bool) {
+	return getUpdateUserPayloadGetUsernameAttributeTypeOk(o.Username)
 }
 
 // HasDatabase returns a boolean if a field has been set.
@@ -100,8 +100,8 @@ func (o *UpdateUserPayload) HasDatabase() bool {
 }
 
 // SetDatabase gets a reference to the given string and assigns it to the Database field.
-func (o *UpdateUserPayload) SetDatabase(v UpdateUserPayloadGetDatabaseRetType) {
-	setUpdateUserPayloadGetDatabaseAttributeType(&o.Database, v)
+func (o *UpdateUserPayload) SetDatabase(v UpdateUserPayloadGetUsernameRetType) {
+	setUpdateUserPayloadGetUsernameAttributeType(&o.Username, v)
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
@@ -129,8 +129,8 @@ func (o *UpdateUserPayload) SetRoles(v UpdateUserPayloadGetRolesRetType) {
 
 func (o UpdateUserPayload) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if val, ok := getUpdateUserPayloadGetDatabaseAttributeTypeOk(o.Database); ok {
-		toSerialize["Database"] = val
+	if val, ok := getUpdateUserPayloadGetUsernameAttributeTypeOk(o.Username); ok {
+		toSerialize["Username"] = val
 	}
 	if val, ok := getUpdateUserPayloadGetRolesAttributeTypeOk(o.Roles); ok {
 		toSerialize["Roles"] = val
