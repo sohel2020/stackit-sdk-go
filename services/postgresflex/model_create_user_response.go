@@ -192,7 +192,7 @@ func (o *CreateUserResponse) transformNewFormatToOld(newFormat struct {
 	}
 
 	// Set default roles (these might need to be adjusted based on your requirements)
-	user.SetRoles([]string{"createdb", "login", "createrole"})
+	user.SetRoles([]string{"createdb", "login"})
 
 	return user
 }
